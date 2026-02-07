@@ -122,30 +122,135 @@
             box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
         }
 
-        .skills-grid {
+        .projects-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 20px;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
             margin-top: 30px;
         }
 
-        .skill-card {
-            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
-            color: white;
-            padding: 25px;
-            border-radius: 8px;
-            text-align: center;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        .project-card {
+            background: white;
+            border: 2px solid #e0e0e0;
+            border-radius: 12px;
+            padding: 30px;
+            transition: all 0.3s ease;
             cursor: pointer;
+            position: relative;
+            overflow: hidden;
+            text-decoration: none;
+            color: inherit;
+            display: block;
         }
 
-        .skill-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 25px rgba(30, 60, 114, 0.3);
+        .project-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 6px;
+            transition: height 0.3s ease;
         }
 
-        .skill-card.orange {
-            background: linear-gradient(135deg, #ff6b35 0%, #ff8c42 100%);
+        .project-card.blue::before {
+            background: linear-gradient(90deg, #1e3c72 0%, #2a5298 100%);
+        }
+
+        .project-card.orange::before {
+            background: linear-gradient(90deg, #ff6b35 0%, #ff8c42 100%);
+        }
+
+        .project-card.purple::before {
+            background: linear-gradient(90deg, #8e44ad 0%, #9b59b6 100%);
+        }
+
+        .project-card.green::before {
+            background: linear-gradient(90deg, #27ae60 0%, #2ecc71 100%);
+        }
+
+        .project-card.teal::before {
+            background: linear-gradient(90deg, #16a085 0%, #1abc9c 100%);
+        }
+
+        .project-card.pink::before {
+            background: linear-gradient(90deg, #e91e63 0%, #ec407a 100%);
+        }
+
+        .project-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+            border-color: transparent;
+        }
+
+        .project-card:hover::before {
+            height: 100%;
+            opacity: 0.08;
+        }
+
+        .project-title {
+            font-size: 1.4rem;
+            font-weight: 700;
+            margin-bottom: 12px;
+            color: #1e3c72;
+        }
+
+        .project-description {
+            font-size: 0.95rem;
+            color: #666;
+            line-height: 1.6;
+            margin-bottom: 15px;
+            min-height: 45px;
+        }
+
+        .project-language {
+            display: inline-block;
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-top: 10px;
+        }
+
+        .project-card.blue .project-language {
+            background: rgba(30, 60, 114, 0.1);
+            color: #1e3c72;
+        }
+
+        .project-card.orange .project-language {
+            background: rgba(255, 107, 53, 0.1);
+            color: #ff6b35;
+        }
+
+        .project-card.purple .project-language {
+            background: rgba(142, 68, 173, 0.1);
+            color: #8e44ad;
+        }
+
+        .project-card.green .project-language {
+            background: rgba(39, 174, 96, 0.1);
+            color: #27ae60;
+        }
+
+        .project-card.teal .project-language {
+            background: rgba(22, 160, 133, 0.1);
+            color: #16a085;
+        }
+
+        .project-card.pink .project-language {
+            background: rgba(233, 30, 99, 0.1);
+            color: #e91e63;
+        }
+
+        .project-link-icon {
+            display: inline-block;
+            margin-left: 8px;
+            opacity: 0.6;
+            transition: opacity 0.3s ease;
+        }
+
+        .project-card:hover .project-link-icon {
+            opacity: 1;
         }
 
         footer {
@@ -160,11 +265,7 @@
             color: #1e3c72;
             margin-bottom: 20px;
             font-size: 2rem;
-        }
-
-        .skill-description {
-            margin-top: 10px;
-            font-size: 0.9rem;
+            text-align: center;
         }
 
         @media (max-width: 768px) {
@@ -211,24 +312,38 @@
         </section>
 
         <section class="content-section">
-            <h2>Expertise</h2>
-            <div class="skills-grid">
-                <div class="skill-card">
-                    <h3>Platform Architecture</h3>
-                    <p class="skill-description">Designing scalable systems</p>
-                </div>
-                <div class="skill-card orange">
-                    <h3>Distributed Systems</h3>
-                    <p class="skill-description">Building resilient solutions</p>
-                </div>
-                <div class="skill-card">
-                    <h3>API Platforms</h3>
-                    <p class="skill-description">Creating robust interfaces</p>
-                </div>
-                <div class="skill-card orange">
-                    <h3>AWS Cloud</h3>
-                    <p class="skill-description">Cloud-native development</p>
-                </div>
+            <h2>Projects</h2>
+            <div class="projects-grid">
+                <a href="https://github.com/iscooter/iscooter" target="_blank" class="project-card blue">
+                    <h3 class="project-title">iscooter <span class="project-link-icon">↗</span></h3>
+                    <p class="project-description">Personal portfolio repository showcasing professional experience and projects</p>
+                    <span class="project-language">Portfolio</span>
+                </a>
+                <a href="https://github.com/iscooter/robotic-arm-function" target="_blank" class="project-card orange">
+                    <h3 class="project-title">robotic-arm-function <span class="project-link-icon">↗</span></h3>
+                    <p class="project-description">Example robotic arm control system demonstrating function-based automation</p>
+                    <span class="project-language">HTML</span>
+                </a>
+                <a href="https://github.com/iscooter/stackblitz-react" target="_blank" class="project-card purple">
+                    <h3 class="project-title">stackblitz-react <span class="project-link-icon">↗</span></h3>
+                    <p class="project-description">Interactive React application created with StackBlitz for rapid prototyping</p>
+                    <span class="project-language">CSS</span>
+                </a>
+                <a href="https://github.com/iscooter/nopipeline-containers" target="_blank" class="project-card green">
+                    <h3 class="project-title">nopipeline-containers <span class="project-link-icon">↗</span></h3>
+                    <p class="project-description">Containerization project exploring deployment without traditional CI/CD pipelines</p>
+                    <span class="project-language">Python</span>
+                </a>
+                <a href="https://github.com/iscooter/nopipeline-jsl" target="_blank" class="project-card teal">
+                    <h3 class="project-title">nopipeline-jsl <span class="project-link-icon">↗</span></h3>
+                    <p class="project-description">Jenkins Shared Library implementation for pipeline-free CI/CD workflows</p>
+                    <span class="project-language">Groovy</span>
+                </a>
+                <a href="https://github.com/iscooter/nopipeline-json" target="_blank" class="project-card pink">
+                    <h3 class="project-title">nopipeline-json <span class="project-link-icon">↗</span></h3>
+                    <p class="project-description">JSON-based configuration approach for simplified deployment automation</p>
+                    <span class="project-language">JSON</span>
+                </a>
             </div>
         </section>
     </main>
