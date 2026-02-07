@@ -253,6 +253,29 @@
             opacity: 1;
         }
 
+        .repo-links {
+            margin-top: 15px;
+            padding-top: 15px;
+            border-top: 1px solid #e0e0e0;
+        }
+
+        .repo-link {
+            display: block;
+            margin: 8px 0;
+            color: #1e3c72;
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: color 0.3s ease;
+        }
+
+        .repo-link:hover {
+            color: #ff6b35;
+        }
+
+        .repo-link strong {
+            font-weight: 600;
+        }
+
         footer {
             text-align: center;
             padding: 40px 20px;
@@ -314,35 +337,31 @@
         <section class="content-section">
             <h2>Projects</h2>
             <div class="projects-grid">
-                <a href="https://github.com/iscooter/iscooter.github.io" target="_blank" class="project-card blue">
-                    <h3 class="project-title">iscooter.github.io <span class="project-link-icon">↗</span></h3>
-                    <p class="project-description">Personal portfolio repository showcasing professional experience and projects</p>
-                    <span class="project-language">Portfolio</span>
-                </a>
+                <div class="project-card blue">
+                    <h3 class="project-title">Jenkins Container Automation</h3>
+                    <p class="project-description">Demonstrates building a Jenkins Shared Library that implements running Docker containers from declarative JSON specifications with a Jenkins server to verify it all.</p>
+                    <span class="project-language">Jenkins / Docker</span>
+                    <div class="repo-links">
+                        <a href="https://github.com/iscooter/nopipeline-jsl" target="_blank" class="repo-link">
+                            <strong>nopipeline-jsl</strong> - Jenkins Shared Library repository ↗
+                        </a>
+                        <a href="https://github.com/iscooter/nopipeline-json" target="_blank" class="repo-link">
+                            <strong>nopipeline-json</strong> - Jenkins job implementing the shared library ↗
+                        </a>
+                        <a href="https://github.com/iscooter/nopipeline-containers" target="_blank" class="repo-link">
+                            <strong>nopipeline-containers</strong> - Containerized Jenkins server for testing ↗
+                        </a>
+                    </div>
+                </div>
                 <a href="https://github.com/iscooter/robotic-arm-function" target="_blank" class="project-card orange">
                     <h3 class="project-title">robotic-arm-function <span class="project-link-icon">↗</span></h3>
-                    <p class="project-description">Example robotic arm control system demonstrating function-based automation</p>
+                    <p class="project-description">A simple project built from a requirements document for an interview/job application, similar to adventofcode.com challenges</p>
                     <span class="project-language">HTML</span>
                 </a>
                 <a href="https://github.com/iscooter/stackblitz-react" target="_blank" class="project-card purple">
                     <h3 class="project-title">stackblitz-react <span class="project-link-icon">↗</span></h3>
                     <p class="project-description">Interactive React application created with StackBlitz for rapid prototyping</p>
                     <span class="project-language">React</span>
-                </a>
-                <a href="https://github.com/iscooter/nopipeline-containers" target="_blank" class="project-card green">
-                    <h3 class="project-title">nopipeline-containers <span class="project-link-icon">↗</span></h3>
-                    <p class="project-description">Containerization project exploring deployment without traditional CI/CD pipelines</p>
-                    <span class="project-language">Python</span>
-                </a>
-                <a href="https://github.com/iscooter/nopipeline-jsl" target="_blank" class="project-card teal">
-                    <h3 class="project-title">nopipeline-jsl <span class="project-link-icon">↗</span></h3>
-                    <p class="project-description">Jenkins Shared Library implementation for pipeline-free CI/CD workflows</p>
-                    <span class="project-language">Groovy</span>
-                </a>
-                <a href="https://github.com/iscooter/nopipeline-json" target="_blank" class="project-card pink">
-                    <h3 class="project-title">nopipeline-json <span class="project-link-icon">↗</span></h3>
-                    <p class="project-description">JSON-based configuration approach for simplified deployment automation</p>
-                    <span class="project-language">Configuration</span>
                 </a>
             </div>
         </section>
